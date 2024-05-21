@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>IDENTIFICATION</title>
+<script type='text/javascript'>
+function validation(){
+	var vehiclenumber=document.getElementById("ve").vlaue;
+
+	if(vehiclenumber==""){
+		document.getElementById("p1").innerHTML="<h6 style='color:red'>enter vehicle number</h6>";
+		return false;
+	}
+	else{
+		document.getElementById("selected").value=vehiclenumber;
+	}
+	return true; 
+}
+</script>
+</head>
+<body>
+<form id='form1' method='post' action='informationservlet' >
+<table border="2" align='center'>
+<tr>
+<td colspan='2' align='center'>
+<h3>IDENTIFICATION</h3>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>
+vehicle number
+</td>
+<td><input type="text" id="ve" name="vehicalnumber" placeholder="Search..." >
+  <button>Search</button></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,194 @@
+	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>registration page</title>
+ <style type="text/css">
+ 
+ .body{
+ background-image="url(C:\Users\chara\Pictures\final.jpg)";
+ 
+ }
+ 
+ 
+ 
+ </style>
+<script type='text/javascript'>
+function validate(){
+ var name=document.getElementById("name").value;
+var username=document.getElementById("uname").value;
+var fathername=document.getElementById("fname").value;
+var pwd=document.getElementById('pwd').value;
+var cpwd=document.getElementById('cpwd').value;
+var phonenumber=document.getElementById('phno').value;
+var relativesnumber=document.getElementById('rno').value;
+var homenumber=document.getElementById('hno').value;
+var vehiclenumber=document.getElementById('ve').value;
+var address=document.getElementById('address').value;
+ 
+
+if(name==""){
+alert("Enter u r name");
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Enter ur name</h6>";
+return false;
+}
+if(username==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Enter user name</h6>";
+return false;
+}
+if(fathername==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Enter father name</h6>";
+return false;
+}
+if(pwd==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Please enter password</h6>";
+return false;
+
+}
+else{
+    if(pwd!=cpwd)
+{
+document.getElementById("p1").innerHTML="<h6 style='color:red'>BOth are not equal</h6>";
+return false;
+}
+}
+if(vehiclenumber==''){
+document.getElementById("p1").innerHTML="<style='color:red'>please enter vechicle number</h6>";
+return false;
+}
+
+var gender="";
+var g=document.getElementsByName('gender');
+
+for(var i=0;i<g.length;i++){
+if(g[i].checked){
+gender=g[i].id;
+}
+}
+if(gender==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Please select gender</h6>";
+return false;
+}
+else{
+document.getElementById("selectedgender").value=gender;
+}
+if(address==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Please enter address</h6>";
+return false;
+
+}
+if(phonenumber==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Please enter PHNO</h6>";
+return false;
+} 
+
+if(relativesnumber==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Please enter relatives number</h6>";
+return false;
+} 
+if(homenumber==""){
+document.getElementById("p1").innerHTML="<h6 style='color:red'>Please enter home number</h6>";
+return false;
+} 
+return true;
+}
+</script>
+</head>
+<body>
+<form id='form1' method="post" action="Regservlet">
+<table border="2" align='center'>
+<tr>
+<td colspan='2' align='center'>
+<h3>Registration Page</h3>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>
+ Name
+</td>
+<td>
+<input type='text' id='name' name='name' placeholder="Enterur name"/>
+
+</td>
+</tr>
+<tr>
+<td>
+ user Name
+</td>
+<td>
+<input type='text' id='uname' name='uname' placeholder="Enter user name"/>
+</td>
+</tr>
+<tr>
+<td>
+Father Name
+</td><td>
+<input type='text' id='fname' name='fname' placeholder="Enter father name"/>
+</td>
+</tr>
+<tr>
+<td>
+Password
+</td>
+<td>
+<input type='password' id='pwd' name='pwd' placeholder="Enter password"/>
+</td>
+</tr>
+<tr>
+<tr>
+<td>
+Confirm Password
+</td>
+<td>
+<input type='password' id='cpwd' name='cpwd' placeholder="Confirmpassword"/>
+</td>
+</tr>
+<tr>
+<td>
+vehicle number
+</td>
+<td ><input type ='text' id ='ve' name='ve' placeholder="enter ur vehicle number"/>
+</td>
+</tr>
+<tr>
+<td>
+Gender
+</td>
+<td>
+<input type='radio' id='male' name='gender'/>Male
+<input type='radio' id='female' name='gender'/>Female
+</td>
+</tr>
+<tr>
+<td>Address </td>
+<td><input type='text' id='address'name='address' placeholder='enter ur address'></td>
+</tr>
+<tr><td>phone_number</td>
+<td><input type='number' id ="phno" name="phno"></td>
+ </tr>
+<tr><td>relatives_number</td>
+<td><input type='number' id ="rno" name="rno"></td>
+ </tr>
+<tr><td>house_number</td>
+<td><input type="number" id ="hno" name="hno"></td>
+ </tr>
+<tr>
+<td>
+<input type='submit' value='Register'  onclick='return validate()'/>
+</td>
+<td>
+<input type='reset' value='clear'/>
+</td>
+</tr>
+<tr>
+<td colspan='2'>
+<p id='p1'></p>
+</td>
+</tr>
+</table>
+<input type="text" id="selectedgender" name="selectedgender" style="display:none"/>
+
+</form>
+</body>
+</html>

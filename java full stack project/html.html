@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validate(){
+	var firstname=document.getElementById("fname").value;
+	var lastname=document.getElementById("lname").value;
+	var username=document.getElementById("uname").value;
+	var password=document.getElementById("uname").value;
+	var username=document.getElementById("uname").value;
+	if(firstname==""){
+		document.getElementById("p1").innerHTML="<h6 style='color:red'>enter First name</h6>";
+		return false;
+	}
+	if(lastname==""){
+		document.getElementById("p1").innerHTML="<h6 style='color:red'>enter last name</h6>";
+		return false;
+	}
+	if(username==""){
+		document.getElementById("p1").innerHTML="<h6 style='color:red'>enter user name</h6>";
+		return false;
+	}
+	if(padssword=""){
+		document.getElementById("p1").innerHTML="<h6 style='color:red'>enter password</h6>";
+		return false;
+	}
+	
+	if(conformpadssword=""){
+		document.getElementById("p1").innerHTML="<h6 style='color:red'>enter conformpassword</h6>";
+		return false;
+	}
+	var gender=""
+	var g=document.getElementByName('gender');
+	for(var i=0;i,g.lenght;i++){
+		if(g[i].checked){
+			gender=g[i].id
+		}
+	}
+	if (gender==""){
+		document.getElementById("p1").innerHTML="<h6 style='color:red'>enter conformpassword</h6>";
+		return false;
+	}
+return true;
+}</script>
+</head>
+<body>
+<form id ="f1">
+<table border="2" align="center">
+<tr><td>first name</td>
+<td><input type="text"id="fname"name="fname"/></td>
+</tr>
+<tr><td>last name</td>
+<td><input type="text"id="lname"name="lname"/></td>
+</tr>
+<tr><td>user name</td>
+<td><input type="text"id="uname"name="uname"/></td>
+</tr>
+<tr>
+<td>password</td>
+<td><input type="password"></td>
+</tr>
+<tr>
+<td>confirm password</td>
+<td><input type="password"></td>
+</tr>
+<tr><td>gender</td>
+<td><input type="radio"id="male">Male
+<input type="radio"id="female">Female</td>
+</tr>
+<tr><td>branch</td>
+<td><select id="branch"name="branch">
+<option>select</option>
+<option>CSE</option>
+<option>IT</option>
+<option>ECE</option>
+</select>
+</td>
+</tr>
+<tr><td>hobbies</td>
+<td><input type="checkbox"id="reading"name="hobbies"/>reading
+<input type="checkbox"id="swimming"name="hobbies"/>swimming
+<input type="checkbox"id="browsing"name="hobbies"/>browsing</td>
+</tr>
+<tr><td>Address</td>
+<td><textarea rows="5" cols="10"></textarea>
+</td>
+</tr>
+<tr>
+<td><input type="submit" id="register" name="register" value="Register" onclick="return validate()"/></td>
+<td><input type="reset" id="register" name="register" value="clear"></td>
+</tr>
+<tr><td colspan="5"><p id="p1"></p>
+</td></tr></table>
+</form>
+</body>
+</html>
